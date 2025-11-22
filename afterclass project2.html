@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class in JS</title>
+</head>
+<body>
+
+  <h1>Class in JS</h1>
+  
+  <button id="runBtn">Run</button>
+
+  <pre id="output">Click Run to display class info.</pre>
+
+  <script>
+    class Course {
+      constructor(title, instructor, duration, topics=[]) {
+        this.title = title;
+        this.instructor = instructor;
+        this.duration = duration;
+        this.topics = topics;
+      }
+
+      getSummary() {
+        return this.title + " - Instructor: " + this.instructor;
+      }
+
+      getDetails() {
+        return {
+          title: this.title,
+          instructor: this.instructor,
+          duration: this.duration,
+          topics: this.topics
+        };
+      }
+
+      static classInfo() {
+        return {
+          name: "Class in JS",
+          language: "JavaScript"
+        };
+      }
+    }
+
+    class JSClass extends Course {
+      constructor(title, instructor, duration, topics=[], level="Beginner") {
+        super(title, instructor, duration, topics);
+        this.level = level;
+      }
+
+      getFullDescription() {
+        return this.getSummary() + "\nLevel: " + this.level;
+      }
+    }
+
+    const obj = new JSClass(
+      "Class in JS",
+      "Tina",
+      3,
+      ["Classes", "Static Methods", "Inheritance"],
+      "Intermediate"
+    );
+
+    document.getElementById("runBtn").onclick = function () {
+      const s1 = Course.classInfo();
+      const s2 = obj.getSummary();
+      const s3 = obj.getFullDescription();
+      const s4 = JSON.stringify(obj.getDetails(), null, 2);
+      document.getElementById("output").textContent =
+        "--- Static Info ---\n" +
+        JSON.stringify(s1, null, 2) +
+        "\n\n--- Summary ---\n" +
+        s2 +
+        "\n\n--- Full Description ---\n" +
+        s3 +
+        "\n\n--- Details ---\n" +
+        s4;
+    };
+  </script>
+
+</body>
+</html>
