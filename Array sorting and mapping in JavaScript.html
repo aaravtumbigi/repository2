@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array sorting and mapping in JavaScript</title>
+</head>
+<body>
+    <h2>
+        JS Array sorting
+    </h2>
+    <button onclick="ascending()">ascending</button>
+    <button onclick="descending()">descending</button>
+    <p id="result"></p>
+    <script>
+        var grades = [90, 98, 89, 100, 100, 86, 94];
+        document.getElementById("result").innerHTML = grades
+        function ascending() {
+            grades.sort(function(a, b){return a-b});
+            document.getElementById("result").innerHTML = grades;
+        }
+        function descending() {
+            grades.sort(function(a, b){return b-a});
+            document.getElementById("result").innerHTML = grades;
+        }
+    </script>
+    <h2>
+        Map Function
+    </h2>
+    <p id="demo"></p>
+    <script>
+        var numbers = [4, 9, 16, 25];
+        function multiplier(num){
+            return num * 2;
+        }
+        var number2 = numbers.map(multiplier);
+        document.getElementById("demo").innerHTML = number2;
+        </script>
+        <h2>
+            Eval() Function
+        </h2>
+        <button onclick="evaluation()">Try it</button>
+        <p id="demo2"></p>
+        <script>
+            function evaluation(){
+            var x = 10;
+            var y = 20;
+            var z = eval("x + y") + "<br>";
+            var c = eval("2 + 2") + "<br>";
+            var g = eval("x - y") + "<br>";
+            
+            var result = z+g+c;
+            document.getElementById("demo2").innerHTML = result;
+            }
+        </script>
+</body>
+</html>
