@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Sorting & Map Function</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f7f9fc;
+        }
+
+        h2 {
+            background: #ff8a80;
+            padding: 8px 18px;
+            border-radius: 6px;
+            color: white;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 8px 5px;
+            border: none;
+            border-radius: 6px;
+            background: #1976d2;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #0d47a1;
+        }
+
+        .output {
+            margin-top: 12px;
+            padding: 12px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 16px;
+            width: 60%;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="section">
+    <h2>JS Array Sorting</h2>
+    <br><br>
+
+    <button onclick="ascending()">Ascending</button>
+    <button onclick="descending()">Descending</button>
+
+    <div id="result" class="output"></div>
+
+    <script>
+        var grades = [90, 98, 89, 100, 100, 86, 94];
+        document.getElementById("result").innerHTML = grades;
+
+        function ascending() {
+            grades.sort(function(a, b){ return a - b });
+            document.getElementById("result").innerHTML = grades;
+        }
+
+        function descending() {
+            grades.sort(function(a, b){ return b - a });
+            document.getElementById("result").innerHTML = grades;
+        }
+    </script>
+</div>
+
+
+<div class="section">
+    <h2>Map Function</h2>
+
+    <div id="demo" class="output"></div>
+
+    <script>
+        var numbers = [4, 9, 16, 25];
+
+        function multiplier(num){
+            return num * 2;
+        }
+
+        var number2 = numbers.map(multiplier);
+        document.getElementById("demo").innerHTML = number2;
+    </script>
+</div>
+
+
+<div class="section">
+    <h2>Eval() Function</h2>
+
+    <button onclick="evaluation()">Try It</button>
+
+    <div id="demo2" class="output"></div>
+
+    <script>
+        function evaluation(){
+            var x = 10;
+            var y = 20;
+            var z = eval("x + y") + "<br>";
+            var c = eval("2 + 2") + "<br>";
+            var g = eval("x - y") + "<br>";
+
+            var result = z + c + g;
+            document.getElementById("demo2").innerHTML = result;
+        }
+    </script>
+</div>
+
+</body>
+</html>
