@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type conversion</title>
+</head>
+<body>
+
+<h2>String() Method</h2>
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script>
+    var a = 20;
+    var b = 25;
+    document.getElementById("demo").innerHTML = a + b;
+    document.getElementById("demo2").innerHTML = String(a) + String(b);
+</script>
+
+<h3>JS error handling</h3>
+<p id="error"></p>
+
+<script>
+    try {
+        alert("An error occured");
+    }
+    catch (err) {
+        document.getElementById("error").innerHTML = err.message;
+    }
+</script>
+
+<h3>Arrow Function</h3>
+<p id="result"></p>
+
+<script>
+    add = (x, y) => x + y;
+    document.getElementById("result").innerHTML = add(2, 5);
+</script>
+
+</body>
+</html>
