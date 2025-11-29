@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JS async/await</h2>
+<p id="demo"></p>
+
+<script>
+async function add(x, y) {
+    let response = await (x + y);
+    display(response);
+}
+
+function display(some) {
+    document.getElementById("demo").innerHTML = "Result: " + some;
+}
+
+add(5, 6);
+</script>
+
+<hr>
+
+<p>Converting a JS Object into string and sending it to the server</p>
+<p id="result"></p>
+
+<script>
+var student = {
+    Name: "Feel",
+    Age: 15,
+    Grade: 12,
+};
+
+var myJson = JSON.stringify(student);   // convert object → JSON string
+var newObj = JSON.parse(myJson);        // convert JSON string → object
+
+document.getElementById("result").innerHTML = 
+    "Student Name: " + newObj.Name;
+</script>
+
+<h2>JS Promises</h2>
+<p id="demo2"></p>
+<script>
+    function sum(x,y){
+        var sum = x + y;
+        myDisplayer(sum);
+    }
+
+    function myDisplayer(some){
+        document.getElementById("demo2").innerHTML = some;
+    }
+
+    let myPromise = new Promise(function(myResolve, myReject){
+        let x = 2;
+        if (x==0)
+            myResolve("OK");
+        else
+            myReject("Error")
+    });
+
+    myPromise.then(
+        function(value){sum(4,6);},
+        function(error){sum(error);}
+    );
+</script>
+
+
+</body>
+</html>
