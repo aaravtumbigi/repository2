@@ -1,0 +1,59 @@
+body{
+    margin: 0%;
+    background-color: lightblue;
+}
+
+nav{
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.myname{
+    color: yellow;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.links a{
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+.links a:hover{
+    color: red;
+    font-size: 17px;
+    transition: 0.3s;
+    text-decoration: dotted underline;
+}
+
+p{
+    padding: 12px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 43%;
+    border-radius: 220px;
+    display: flex;
+}
+
+#home{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+}
+
+#home img{
+    margin: 0;
+    width: 280px;
+    border-radius: 220px;
+}
